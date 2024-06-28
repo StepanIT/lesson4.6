@@ -9,14 +9,12 @@
     const newArr = [];
   
     for (let i = 0; i < allStudents.length; i++) {
-      for (let x = 0; x < failedStudents.length; x++) {
-        if (!(allStudents[i] === failedStudents[x])) {
-          newArr.push(allStudents[i]);
+        if (allStudents.includes('Сидоров', 'Смирнов', 'Попов')) {
+          newArr[i] = allStudents.filter(item => !failedStudents.includes(item));
         }
         return newArr;
       }
     }
-  }
 
   const newArr = filter(allStudents , failedStudents);
   console.log('newArray:' , newArr);
