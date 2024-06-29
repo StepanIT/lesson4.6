@@ -4,17 +4,9 @@
 
   const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
 
-  const filter = (allStudents , failedStudents) => {
-
-    const newArr = [];
-  
-    for (let i = 0; i < allStudents.length; i++) {
-        if (allStudents.includes('Сидоров', 'Смирнов', 'Попов')) {
-          newArr[i] = allStudents.filter(item => !failedStudents.includes(item));
-        }
-        return newArr;
-      }
+  const newArr = allStudents.filter(student => {
+    if (!failedStudents.includes(student)) {
+      return true;
     }
-
-  const newArr = filter(allStudents , failedStudents);
-  console.log('newArray:' , newArr);
+  });
+    console.log(newArr);
